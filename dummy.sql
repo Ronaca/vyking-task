@@ -1,5 +1,5 @@
 -- Add some dummy data
-USE vyking3;
+USE vyking;
 
 -- Insert tournaments
 INSERT INTO tournaments (name, prize_pool, start_date, end_date) VALUES
