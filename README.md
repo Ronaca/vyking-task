@@ -16,10 +16,14 @@ Ensure you have PHP installed, along with the **PDO extension** for MySQL (it sh
 
 ### 2. **Database Setup**
 Create a MySQL database and import the schema from the `db.sql` file.
+The default name of the database is `vyking`, change it if you want to use a different name but make sure to update the database connection details
+in the `config/db.php` file.
 
 ```sh
 mysql -u USERNAME -p < db.sql
 ```
+
+
 The schema includes the following tables:
 - **players**: Stores player information
 - **tournaments**: Stores tournament information
@@ -36,6 +40,7 @@ mysql -u USERNAME -p < dummy.sql
 ## 3. **Tournament Prize Distribution API (PHP)**
 
 This section explains how to use the `distribute_prizes.php` and `get_rankings.php` scripts, which handle prize distribution and player rankings in a tournament.
+Database connection details are stored in the `config/db.php` file.
 
 ### 3.1 **Scripts Overview**
 
