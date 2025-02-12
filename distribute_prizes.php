@@ -1,7 +1,5 @@
 <?php
-$dsn = 'mysql:host=localhost;dbname=vyking';
-$user = 'root';
-$password = '';
+require_once __DIR__ . '/config/db.php';
 
 try {
     $pdo = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
