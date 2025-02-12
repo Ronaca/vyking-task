@@ -33,42 +33,47 @@ Dummy data can be inserted into the tables using the `dummy.sql` file.
 mysql -u USERNAME -p < dummy.sql
 ```
 
-### 3. **Tournament Prize Distribution API (PHP)**
+## 3. **Tournament Prize Distribution API (PHP)**
 
-This section explains how to use the distribute_prizes.php and get_rankings.php scripts, which handle prize distribution and player rankings in a tournament.
+This section explains how to use the `distribute_prizes.php` and `get_rankings.php` scripts, which handle prize distribution and player rankings in a tournament.
 
-### 3.1. **Scripts**
+### 3.1 **Scripts Overview**
 
-### 3.1.1 **distribute_prizes.php**
-Calls the MySQL stored procedure distribute_prizes()
-Distributes the prize pool among the top-ranked players
-Updates player balances accordingly
+#### 3.1.1 **distribute_prizes.php**
+- Calls the MySQL stored procedure `distribute_prizes()`.
+- Distributes the tournament's prize pool among the top-ranked players.
+- Updates player balances accordingly.
 
-### 3.1.2 **get_rankings.php**
-Retrieves the ranking of players based on their account balance
+#### 3.1.2 **get_rankings.php**
+- Retrieves the ranking of players based on their total bets.
 
-### 3.2. **How to Use**
+---
 
-### 3.2.1 **distribute_prizes.php**  
+### 3.2 **How to Use**
 
-```bash
-  POST /distribute_prizes.php
-```
-Request Parameters:
-- tournament_id: The ID of the tournament to distribute prizes for
+#### 3.2.1 **Distribute Prizes (`distribute_prizes.php`)**
 
-Example Request:
+**Endpoint:**
+```http
+POST /distribute_prizes.php
+```  
+**Request Parameters:**
+- `tournament_id` (integer) – The ID of the tournament for which prizes should be distributed.
+
+**Example Request:**
 ```sh
 curl -X POST -d "tournament_id=1" http://localhost/distribute_prizes.php
-```
+```  
 
-### 3.2.2 **get_rankings.php**  
+---
 
-```bash
-  GET /get_rankings.php
-```
+#### 3.2.2 **Get Player Rankings (`get_rankings.php`)**
 
-Example Request:
+**Endpoint:**
+```http
+GET /get_rankings.php
+```  
+
+**Example Request:**
 ```sh
 curl http://localhost/get_rankings.php
-```
